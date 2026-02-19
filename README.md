@@ -16,12 +16,22 @@ conda install pytorch torchvision torchaudio -c pytorch
 pip install numpy matplotlib scikit-learn tqdm
 ```
 
-### 已安装环境信息
+### 已安装环境信息（测试环境：pytorch_ts）
 
 - **Python**: 3.10+
-- **PyTorch**: 2.x
+- **PyTorch**: 2.10.0
 - **NumPy**: 1.24+
 - **scikit-learn**: 1.3+
+- **tqdm**: 4.65+
+- **seaborn**: 0.12+
+- **Device**: CPU (CUDA not available)
+
+### Conda 环境路径
+
+```bash
+source /opt/anaconda3/etc/profile.d/conda.sh
+conda activate pytorch_ts
+```
 
 ## 项目结构
 
