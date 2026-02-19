@@ -43,6 +43,9 @@ transformer_binary_classification/
 ├── train.py            # 训练脚本
 ├── evaluate.py         # 评估脚本
 ├── config.py           # 配置文件
+├── model.py            # 模型架构
+├── data.py             # 数据生成
+├── utils.py            # 学习率调度器等工具
 ├── requirements.txt    # 依赖列表
 └── README.md           # 项目说明
 ```
@@ -58,6 +61,32 @@ python train.py
 
 # 评估模型
 python evaluate.py
+
+# 测试学习率调度器
+python utils.py
+```
+
+## 学习率调度器
+
+项目包含 `CosineWarmupScheduler` 学习率调度器（`utils.py`）：
+
+- **Warmup 阶段**：学习率从 0 线性增加到初始学习率
+- **余弦退火阶段**：学习率按余弦函数衰减到最小学习率
+
+```python
+from utils import CosineWarmupScheduler
+
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+scheduler = CosineWarmupScheduler(
+    optimizer, 
+    warmup_epochs=5, 
+    total_epochs=20,
+    min_lr=1e-5
+)
+
+for epoch in range(20):
+    train(...)
+    scheduler.step()
 ```
 
 ## 模型架构
