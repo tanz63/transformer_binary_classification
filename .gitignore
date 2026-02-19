@@ -1,0 +1,36 @@
+# Transformer Binary Classification
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 模型权重
+*.pth
+*.pt
+*.ckpt
+
+# 图片输出
+*.png
+*.jpg
+
+# 环境
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
