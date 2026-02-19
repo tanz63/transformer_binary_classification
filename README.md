@@ -33,6 +33,8 @@ source /opt/anaconda3/etc/profile.d/conda.sh
 conda activate pytorch_ts
 ```
 
+本项目已集成 Cline CLI 代码智能体
+
 ## 项目结构
 
 ```
